@@ -5,12 +5,13 @@ import AboutPage from './components/pages/About';
 import ContactPage from './components/pages/Contact';
 import ProjectPage from './components/pages/Project';
 import ErrorPage from './components/pages/404';
-
+import Footer from './components/Footer';
 
 
 function App() {
   return (
    <>
+
   <NavBar />
   <Switch>
         <Route exact path="/" component={HomePage}/>
@@ -19,7 +20,9 @@ function App() {
         <Route path="/contact" component={ContactPage}/>
         <Route component={ErrorPage}/>
     </Switch>
+ <Footer/>
    </>
+   
   );
 }
 
