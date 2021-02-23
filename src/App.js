@@ -6,12 +6,12 @@ import ContactPage from './components/pages/Contact';
 import ProjectPage from './components/pages/Project';
 import ErrorPage from './components/pages/404';
 import Footer from './components/Footer';
-
-
+document.body.style = ' background: linear-gradient(to top right, #99ff66 0%, #66ffff 100%);';
+document.title = 'SANIDHIYA\'s Space'
 function App() {
+  
   return (
    <>
-
   <NavBar />
   <Switch>
         <Route exact path="/" component={HomePage}/>
