@@ -33,9 +33,9 @@ const TableData = [
 ]
 
 
-const TableforEducation = ()=>{
+const TableforEducation = (props)=>{
     return (
-        <Table striped bordered hover variant="light" className="table-responsive-md">
+        <Table striped bordered hover variant={`${props.bg}`} className="table-responsive-md">
   <thead className="h5">
     <tr>
       <th>Year</th>

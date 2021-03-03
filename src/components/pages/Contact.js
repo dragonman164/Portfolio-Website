@@ -3,14 +3,16 @@ import {useEffect,useState} from 'react';
 import LoadingIndicator from '../LoadingIndicator';
 
 
-const ContactPage = ()=>{
+const ContactPage = (props)=>{
 
 
     const [loading,setLoading] = useState(true);
 
 
     useEffect(()=>{
-        setLoading(false) 
+      setTimeout(() => {
+        setLoading(false);
+      }, 500);  
       },[])
 
     const [email,setEmail] = useState('')
@@ -48,14 +50,14 @@ const ContactPage = ()=>{
 {alert?<Alert  variant="success" dismissible onClose={()=>setalert(false)}> 
     Form has been submitted Successfully
   </Alert>:null}
-          <div className="container bg-light py-5 my-5 text-center bg-dark text-light">
+          <div className={`container py-5 my-5 text-center bg-${props.bg} text-${props.text}`}>
     <div className="col-md-2 col-lg-10 p-lg-5 mx-auto my-1">
       <h1 className="font-weight-bold ">Do you wanna Collaborate?</h1>
       <h3 className="lead font-weight-bold">You can write me Here!!</h3>
     </div>
     </div>
 
-        <div className="container bg-dark py-2 text-light">
+        <div className={`container bg-${props.bg} py-2 text-${props.text}`}>
     <Form  onSubmit={submitForm} id="form">
   <Form.Group controlId="exampleForm.ControlInput1">
     <Form.Label className="h5">Email address: {email}</Form.Label>

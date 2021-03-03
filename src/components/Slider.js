@@ -32,7 +32,7 @@ const SliderData = [
 
 ]
 
-const Slider = ()=> {
+const Slider = (props)=> {
 
     return (
         <Carousel >
@@ -47,7 +47,7 @@ const Slider = ()=> {
     />
 
     <Carousel.Caption>
-    <div className="d-none d-md-block responsive container-fluid bg-dark py-3">
+    <div className={`d-none d-md-block responsive container-fluid bg-${props.bg} py-3 text-${props.text}`}>
       <h3 className="font-weight-bold">{item.title}</h3>
       <ul className="h5">
       {item.listData.map((data)=><li>{data}</li>)}

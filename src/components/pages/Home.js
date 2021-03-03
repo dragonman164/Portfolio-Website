@@ -1,7 +1,7 @@
 import SkillCard from '../SkillCard';
 import LoadingIndicator from '../LoadingIndicator';
 import {useEffect,useState} from 'react';
-import Image from '../../Assets/coding.gif'
+
 
 
 const DisplayData  = [
@@ -140,19 +140,20 @@ const DisplayData  = [
 }
 ]
 
-const HomePage = ()=>{
+const HomePage = (props)=>{
 
   const [loading,setLoading] = useState(true);
 
   useEffect(()=>{
-    setLoading(false)
-  
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);  
   },[])
 
     return (
 
       loading?<LoadingIndicator/>:<>
-    <div className="position-relative overflow-hidden p-20 p-md-5 m-md-3 text-center bg-dark text-light">
+    <div className={`position-relative overflow-hidden p-20 p-md-5 m-md-3 text-center bg-${props.bg} text-${props.text}`}>
     <div className="col-md-2 col-lg-10 p-lg-5 mx-auto my-1">
     <h4 className="text font-weight-bold">Welcome to the world of technical enthusiasts...</h4>
       <h1 className="font-weight-bold">Hey there, myself SANIDHIYA</h1>
@@ -163,19 +164,19 @@ const HomePage = ()=>{
     <div className="product-device product-device-2 shadow-sm d-none d-md-block"></div>
   </div>
 
-    <div className="container bg-dark py-5 my-5 text-light">
+    <div className={`container bg-${props.bg} py-5 my-5 text-${props.text}`}>
     <h1 className="text-center font-weight-bold">Know my Techincal Skills</h1>
     <h4 className="text-center font-weight-bold">In my ongoing journey, I have mastered the following skills and I expect to learn more things  in the upcoming time.</h4>
     </div>  
 
 
-      <div className="container bg-dark">
+      <div className={`container bg-${props.bg}`}>
       {
         DisplayData.map((data,index)=>{
           return (
             <>
             <div className="container py-1 my-3">
-    <h2 className="text-left font-weight-bold text-light">{index+1 +'.'} {data.title}</h2>
+    <h2 className={`text-left font-weight-bold text-${props.text}`}>{index+1 +'.'} {data.title}</h2>
     </div>  
   <div className="container text-center">
        <div className="row ">

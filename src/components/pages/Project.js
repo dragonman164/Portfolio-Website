@@ -25,19 +25,22 @@ const ProjectData = [
 
 
 
-const ProjectsPage = ()=>{
+const ProjectsPage = (props)=>{
 
     const [loading,setLoading] = useState(true);
 
 
     useEffect(()=>{
-        setLoading(false)  
+        setTimeout(() => {
+            setLoading(false);
+          }, 500);  
+        
       },[])
 
 
     return (
         loading?<LoadingIndicator/>:<>
-        <div className="container bg-light py-5 my-5 text-center bg-dark text-light">
+        <div className={`container bg-${props.bg} py-5 my-5 text-center text-${props.text}`}>
     <div className="col-md-2 col-lg-10 p-lg-5 mx-auto my-1">
       <h1 className="font-weight-bold ">Projects</h1>
       <h3 className="lead font-weight-bold">Have a look at projects done by me.</h3>
@@ -46,13 +49,13 @@ const ProjectsPage = ()=>{
     </div>
 
 
-    <div className="container bg-dark py-5 my-5 text-light">
+    <div className={`container bg-${props.bg} py-5 my-5 text-${props.text}`}>
 
     {
         ProjectData.map((data,index)=>{
             return (
                 <>
-                <div className="border border-light my-2 py-3 px-3">
+                <div className={`border border-${props.text} my-2 py-3 px-3`}>
                 <h2 className="font-weight-bold py-3" >{index+1 +'.'} {data.title}</h2>
                   <p className="text-left h5 py-3">{data.description}</p>
                 <Button href={data.link} className="y-6" variant="primary" size="lg" active>
