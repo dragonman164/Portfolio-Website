@@ -21,7 +21,7 @@ const Footer = (props)=> {
 
 
     return (
-      <footer className={`container-fluid bg-${props.bg} my-3  py-3 text-${props.text}`} >
+      <footer className={`container-fluid bg-${props.bg} my-3  py-3 text-${props.text} `} >
       <div className="row">
         <div className="col-12 col-md">
           <small className="d-block mb-3 text-muted ml-5" style={{fontSize:'15px'}}>&copy; {year} All Rights Reserved</small>

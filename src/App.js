@@ -9,8 +9,9 @@ import Footer from './components/Footer';
 import {useState} from 'react';
 
 
+
 let bg = 'light',text='dark';
-document.body.style = ' background: linear-gradient(to top right, #99ff66 0%, #66ffff 100%);';
+// document.body.style = ' background: linear-gradient(to top right, #99ff66 0%, #66ffff 100%);';
 document.title = 'SANIDHIYA\'s Space'
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
   
   return (
    <>
+   
   <NavBar changeTheme={setTheme}/>
   <Switch>
         <Route exact path="/" component={()=><HomePage text={text} bg={bg}/>}/>

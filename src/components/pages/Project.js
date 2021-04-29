@@ -2,7 +2,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import {Button} from 'react-bootstrap'
 import LoadingIndicator from '../LoadingIndicator';
 import {useEffect,useState} from 'react';
-
+import ParticleBg from '../ParticleBg';
 
 const ProjectData = [
 
@@ -40,6 +40,11 @@ const ProjectsPage = (props)=>{
 
     return (
         loading?<LoadingIndicator/>:<>
+         <div style={{
+          height: '150px'
+        }}>
+        <ParticleBg/>
+        </div>
         <div className={`container bg-${props.bg} py-5 my-5 text-center text-${props.text}`}>
     <div className="col-md-2 col-lg-10 p-lg-5 mx-auto my-1">
       <h1 className="font-weight-bold ">Projects</h1>

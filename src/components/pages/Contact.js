@@ -1,7 +1,7 @@
 import {Form,Button,Alert} from 'react-bootstrap';
 import {useEffect,useState} from 'react';
 import LoadingIndicator from '../LoadingIndicator';
-
+import ParticleBg from '../ParticleBg';
 
 const ContactPage = (props)=>{
 
@@ -46,6 +46,11 @@ const ContactPage = (props)=>{
 
     return (
         loading?<LoadingIndicator/>: <>
+        <div style={{
+          height: '150px'
+        }}>
+        <ParticleBg/>
+        </div>
 
 {alert?<Alert  variant="success" dismissible onClose={()=>setalert(false)}> 
     Form has been submitted Successfully

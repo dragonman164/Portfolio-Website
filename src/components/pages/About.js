@@ -3,6 +3,7 @@ import Slider from '../Slider';
 import DescriptionIcon from '@material-ui/icons/Description';
 import LoadingIndicator from '../LoadingIndicator';
 import {useEffect,useState} from 'react';
+import ParticleBg from '../ParticleBg';
 
 const AboutPage = (props)=>{
 
@@ -18,6 +19,11 @@ const AboutPage = (props)=>{
 
     return (
          loading?<LoadingIndicator/>:<>
+         <div style={{
+          height: '150px'
+        }}>
+        <ParticleBg/>
+        </div>
         <div className={`container bg-${props.bg} py-5 my-5 text-center text-${props.text}`}>
     <div className="col-md-2 col-lg-10 p-lg-5 mx-auto my-1">
       <h1 className="font-weight-bold ">About Myself</h1>
